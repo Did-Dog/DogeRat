@@ -75,7 +75,7 @@ app.post("/uploadFile", upload.single('file'), (req, res) => {
     const name = req.file.originalname
     const file_name = req.file.filename
     const filePath = __dirname + '/uploadedFile/' +encodeURIComponent(name)
-    const host_url = window.location.origin
+    const host_url = req.protocol + '://' + req.get('host')
     fs.rename(__dirname + '/uploadedFile/' + file_name, __dirname + '/uploadedFile/' +encodeURIComponent(name), function(err) { 
       if ( err ) console.log('ERROR: ' + err);
     });
