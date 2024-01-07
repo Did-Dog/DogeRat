@@ -12,8 +12,8 @@ echo "||__||||__||||__||||__||||__||||__||||__||||_\\"
 echo "|\__/|\__/|\__/||/__/|\__/|\__/|\__/|\__/|\__/"
 printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo -e "\e[0m"
-echo "Author: shivayadv"
-echo "Github: shivaya-dav"
+echo "Author: shivayadv & Did-Dog"
+echo "Github: shivaya-dav & did-dog"
 echo "Telegram channel: cybershieldx"
 read -p "Enter your Telegram username: " telegram_username
 sed -i "0,/telegram_username/s//${telegram_username}/" port.sh
